@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcenaria Weiss | Móveis Planejados de Alta Qualidade em Curitiba</title>
+    <style>
+        /* Base Reset & Variables */
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Gray */
+            --secondary-color: #34495e; /* Slightly lighter dark blue */
+            --accent-color: #27ae60; /* WhatsApp Green */
+            --text-color: #333;
+            --light-text-color: #ecf0f1; /* Light gray for dark backgrounds */
+            --bg-light: #f8f8f8;
+            --bg-dark: #34495e;
+            --max-width: 1100px;
+            --padding-section: 40px 20px;
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.2em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #219d53; /* Darker green on hover */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            white-space: nowrap; /* Prevent text wrapping on small screens */
+        }
+
+        .primary-btn {
+            background-color: var(--accent-color);
+            color: var(--light-text-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .primary-btn:hover {
+            background-color: #219d53;
+            border-color: #219d53;
+            transform: translateY(-2px);
+        }
+
+        /* Header (Minimal for brand name) */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: var(--light-text-color);
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh; /* Make hero section take up most of the viewport */
+        }
+
+        #hero h1 {
+            color: var(--light-text-color);
+            font-size: 2.8em;
+            margin-bottom: 25px;
+            max-width: 800px;
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        #hero .btn {
+            font-size: 1.1em;
+            padding: 15px 30px;
+        }
+
+        /* General Section Styling */
+        section {
+            padding: var(--padding-section);
+            text-align: center;
+        }
+
+        section:nth-of-type(odd) {
+            background-color: var(--bg-light);
+        }
+
+        section:nth-of-type(even) {
+            background-color: #eef2f5; /* Slightly different light background */
+        }
+
+        section h2 {
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Serviços Section */
+        #servicos ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #servicos li {
+            background-color: white;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+            flex: 1 1 calc(100% - 40px); /* Mobile: full width, considering gap */
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        #servicos li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        #servicos li::before {
+            content: '✓'; /* Simple checkmark icon using unicode */
+            display: block;
+            font-size: 2em;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1; /* Adjust line height for better alignment */
+        }
+        #servicos p {
+            margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1em;
+        }
+
+        /* Sobre Section */
+        #sobre p {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Contato Section */
+        #contato .contact-details {
+            max-width: 600px;
+            margin: 30px auto 0;
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+        #contato .contact-details p, #contato .contact-details ul {
+            margin-bottom: 20px;
+        }
+        #contato .contact-details li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: flex-start; /* Align icon and text at the top */
+        }
+        #contato .contact-details li:last-child {
+            margin-bottom: 0;
+            justify-content: center; /* Center the WhatsApp button */
+            margin-top: 25px;
+        }
+        #contato .contact-details li::before {
+            font-family: sans-serif; /* Fallback for emoji rendering */
+            font-weight: normal; /* Emojis are often bold by default, ensure consistent sizing */
+            color: var(--accent-color);
+            margin-right: 12px;
+            font-size: 1.3em;
+            line-height: 1.2;
+            flex-shrink: 0; /* Prevent emoji from shrinking */
+        }
+        #contato .contact-details li:nth-child(1)::before { content: '📞'; } /* Phone icon */
+        #contato .contact-details li:nth-child(2)::before { content: '📍'; } /* Location icon */
+        /* Last child (WhatsApp button) does not need a ::before icon */
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text-color);
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            #hero h1 {
+                font-size: 3.5em;
+            }
+            #hero p {
+                font-size: 1.3em;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            section {
+                padding: 60px 30px;
+            }
+            #servicos li {
+                flex: 1 1 calc(50% - 30px); /* Two columns */
+            }
+        }
+
+        @media (min-width: 900px) {
+            #hero {
+                padding: 120px 20px;
+                min-height: 80vh;
+            }
+            #hero h1 {
+                font-size: 4.5em;
+            }
+            #hero p {
+                font-size: 1.5em;
+            }
+            #servicos li {
+                flex: 1 1 calc(33.333% - 20px); /* Three columns */
+            }
+            #contato .contact-details {
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <span class="logo">Marcenaria Weiss</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1>Marcenaria Weiss: Soluções Sob Medida em Curitiba</h1>
+                <p>Qualidade, precisão e design exclusivo para seus móveis planejados. Transformamos seu espaço com funcionalidade e estilo.</p>
+                <a href="https://wa.me/5541998893109" target="_blank" class="btn primary-btn">Fale Conosco via WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <ul>
+                    <li>Cozinhas Planejadas</li>
+                    <li>Dormitórios e Closets</li>
+                    <li>Móveis para Banheiros</li>
+                    <li>Salas e Painéis</li>
+                    <li>Escritórios e Home Offices</li>
+                    <li>Projetos Comerciais</li>
+                </ul>
+                <p>Desenvolvemos projetos personalizados com atenção aos detalhes e funcionalidade, garantindo a otimização de cada ambiente.</p>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <h2>Sobre a Marcenaria Weiss</h2>
+                <p>Com anos de experiência no mercado de Curitiba, a Marcenaria Weiss é sinônimo de excelência na fabricação de móveis planejados. Nosso compromisso é com a qualidade dos materiais, a precisão na execução e a satisfação total do cliente. Contamos com uma equipe qualificada para transformar suas ideias em projetos duradouros e funcionais, sempre respeitando prazos e orçamentos.</p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <h2>Entre em Contato</h2>
+                <p>Estamos prontos para ouvir sua necessidade e apresentar a melhor solução em marcenaria.</p>
+                <div class="contact-details">
+                    <ul>
+                        <li><a href="tel:+5541998893109">+55 41 99889-3109</a></li>
+                        <li>Rua Solange Maestrelli, 185 - b - Cidade Industrial de Curitiba, Curitiba - PR, 81310-160, Brazil</li>
+                        <li><a href="https://wa.me/5541998893109" target="_blank" class="btn primary-btn">Fale via WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Marcenaria Weiss. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
